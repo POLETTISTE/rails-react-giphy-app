@@ -1,18 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React, { Fragment } from "react";
+import { createRoot } from "react-dom/client";
 
 import "../assets/stylesheets/application.scss";
+import App from "./components/App/app";
 
 const Hello = ({ name }) => {
-  return (
-    <div>
-      Hello,
-      {name}
-    </div>
-  );
+  return <App />;
 };
 
 const root = document.getElementById("root");
 if (root) {
-  ReactDOM.render(<Hello name="Stéphane" />, root);
+  const reactRoot = createRoot(root);
+  reactRoot.render(<Hello name="Stéphane" />);
 }
